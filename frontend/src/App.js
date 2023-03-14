@@ -1,29 +1,37 @@
 import "./App.scss";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+    BrowserRouter,
+    Route,
+    Router,
+    Routes,
+    useLocation,
+} from "react-router-dom";
 
-import Navbar from "./components/Navbar";
+import NavBar from "./components/NavBar";
 import Headerbar from "./components/Headerbar";
 
 import Notfound from "./pages/Notfound";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
+import { useState } from "react";
 
 function App() {
-   return (
-      <div className="App">
-         <Headerbar />
+    //  const [currentPage, setCurrentPage] = useState(useLocation);
 
-         <BrowserRouter>
-            <Routes>
-               <Route path="/" element={<Home />} />
-               <Route path="/gallery" element={<Gallery />} />
-               <Route path="*" element={<Notfound />} />
-            </Routes>
-         </BrowserRouter>
+    return (
+        <div className="App">
+            <Headerbar />
 
-         <Navbar />
-      </div>
-   );
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/gallery" element={<Gallery />} />
+                    <Route path="*" element={<Notfound />} />
+                </Routes>
+                <NavBar />
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
