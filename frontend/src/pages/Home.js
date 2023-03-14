@@ -1,4 +1,5 @@
 import PostFeed from "../components/Post/PostFeed";
+
 import "./Home.scss";
 
 import data from "../database.json";
