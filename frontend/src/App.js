@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import CreatePost from "./pages/CreatePost";
 import { useEffect, useState } from "react";
+import PostImg from "./components/Post/PostImg";
+import Editpost from "./pages/Editpost";
 
 function App() {
    const [postsData, setPostsData] = useState([]);
@@ -17,8 +19,7 @@ function App() {
       fetchAllPosts();
    }, []);
 
-   useEffect(() => {
-   }, [postsData]);
+   useEffect(() => {}, [postsData]);
 
    function fetchAllPosts() {
       fetch("/posts", {
@@ -33,7 +34,7 @@ function App() {
          });
    }
 
-   return (
+   retur(
       <div className="App">
          <BrowserRouter>
             <Headerbar />
@@ -41,6 +42,7 @@ function App() {
                <Route path="/" element={<Home postsData={postsData} />} />
                <Route path="/gallery" element={<Gallery />} />
                <Route path="/createpost" element={<CreatePost />} />
+               <Route path="/editpost/:postid" element={<Editpost />} />
                <Route path="*" element={<Notfound />} />
             </Routes>
             <NavBar />

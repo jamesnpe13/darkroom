@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import PostFeed from "../components/Post/PostFeed";
+
 import "./Home.scss";
 
 export default function Home({ postsData }) {
