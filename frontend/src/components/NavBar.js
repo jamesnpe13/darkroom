@@ -11,7 +11,7 @@ const NavBar = () => {
                     <img src={"images/gallery.png"} alt=""></img>
                 </NavLink>
                 <NavLink to="/createpost">
-                    <img src={"images/create.png"} alt=""></img>
+                    <img className="create-post-btn" src={"images/create.png"} alt=""></img>
                 </NavLink>
                 <NavLink to="/search">
                     <img src={"images/search.png"} alt=""></img>

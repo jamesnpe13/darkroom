@@ -1,10 +1,11 @@
 import "./Headerbar.scss";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Headerbar = () => {
    const path = useLocation().pathname;
    const [currentPage, setCurrentPage] = useState("");
+
    useEffect(() => {
       console.log(path);
       if (path === "/") {
@@ -14,6 +15,7 @@ const Headerbar = () => {
          setCurrentPage("Gallery");
       }
    }, [path]);
+   
    return (
       <div className="headerbar">
          <img src={"images/logo-nav.png"} alt=""></img>
