@@ -26,7 +26,7 @@ function App() {
             <Routes>
                <Route path="/" element={<Home />} /> <Route path="/post/img/" element={<PostImg />} />
                <Route path="/gallery" element={<Gallery />} />
-               <Route path="/editpost" element={<Editpost />} />
+               <Route path="/editpost/:postid" element={<Editpost />} />
                <Route path="*" element={<Notfound />} />
               
             </Routes>
