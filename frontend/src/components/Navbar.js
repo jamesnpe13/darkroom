@@ -10,7 +10,7 @@ const NavBar = () => {
                 <NavLink to="/gallery">
                     <img src={"images/gallery.png"} alt=""></img>
                 </NavLink>
-                <NavLink to="/create">
+                <NavLink to="/createpost">
                     <img src={"images/create.png"} alt=""></img>
                 </NavLink>
                 <NavLink to="/search">
