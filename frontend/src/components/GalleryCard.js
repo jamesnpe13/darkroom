@@ -15,7 +15,7 @@ const GalleryCard = () => {
                     </p>
                 </div>
                 <div>
-                    <img src={"./images/placeholder-image.png"}></img>{" "}
+                    <img src={"./images/placeholder-image.png"} alt=""></img>{" "}
                     {/* api image goes here */}
                 </div>
             </div>
