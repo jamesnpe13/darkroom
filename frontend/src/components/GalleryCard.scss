@@ -1,0 +1,24 @@
+.gallery-card img {
+    height: 60px;
+    outline: 1px solid grey;
+    border-radius: 5px;
+}
+.gallery-card {
+    outline: 1px solid gray;
+    display: flex;
+    padding: 15px;
+    margin: 15px 0px 15px 0px;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.card-title {
+    font-size: 1rem;
+    margin: 5px 0px 5px 0px;
+}
+.card-description {
+    opacity: 0.5;
+}
+.day {
+    color: gray;
+}
