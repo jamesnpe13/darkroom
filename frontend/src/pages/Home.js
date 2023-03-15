@@ -7,7 +7,7 @@ export default function Home({ postsData }) {
    return (
       <div className="home page">
          {postsData.map((item) => {
-            return <PostFeed key={item.id} postData={item} />;
+            return <PostFeed key={item._id} postData={item} />;
          })}
       </div>
    );
