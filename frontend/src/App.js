@@ -1,5 +1,5 @@
 import "./App.scss";
-import { BrowserRouter, Route, Router, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import Headerbar from "./components/Headerbar";
@@ -7,7 +7,6 @@ import Headerbar from "./components/Headerbar";
 import Notfound from "./pages/Notfound";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
-import { useState } from "react";
 import CreatePost from "./pages/CreatePost";
 
 function App() {
