@@ -5,12 +5,12 @@
 }
 
 .gallery-card {
-  outline: 1px solid gray;
   display: flex;
   padding: 15px;
   margin: 15px 0px 15px 0px;
   align-items: center;
   border-radius: 5px;
+  background-color: white;
 }
 
 .card-title {
