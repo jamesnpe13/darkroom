@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+
 require("dotenv").config();
 app.use(express.json());
 
@@ -13,12 +14,13 @@ const newPost = new Post({
    date: new Date(),
    likes: 5,
 });
-  
+
 // routes
 
 // get all posts
-app.get("/posts", (req, res) => {
-   
+app.get("/posts", async (req, res) => {
+   const postArray = await Post.find({});
+   res.json(postArray);
 });
 
 // get user's posts
@@ -36,9 +38,9 @@ app.put("/posts/:id", (req, res) => {
    //
 });
 
-// delete a post  
+// delete a post
 app.delete("/posts/:id", (req, res) => {
-   // 
+   //
 });
 
 // app.post("/posts", async (req, res) => {
@@ -47,7 +49,7 @@ app.delete("/posts/:id", (req, res) => {
 //    res.json(postArray);
 // });
 
-// app.get("/posts", async (req, res) => {
+// app.get("/sample", async (req, res) => {
 //    const postArray = await Post.find({});
 //    res.json(postArray);
 // });
