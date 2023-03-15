@@ -1,21 +1,30 @@
+import { useEffect, useState } from "react";
 import PostFeed from "../components/Post/PostFeed";
 import "./Home.scss";
 
-import data from "../database.json";
-import { useEffect, useState } from "react";
-
-export default function Home() {
-   const [usersData, setUserData] = useState([]);
-
-   useEffect(() => {
-      setUserData(data);
-   }, []);
+export default function Home({ postsData }) {
 
    return (
       <div className="home page">
-         {usersData.map((item) => {
+         {postsData.map((item) => {
             return <PostFeed key={item.id} postData={item} />;
          })}
       </div>
    );
 }
+
+// export default function Home({ postsData }) {
+//    const [usersData, setUserData] = useState([]);
+
+//    useEffect(() => {
+//       setUserData(data);
+//    }, []);
+
+//    return (
+//       <div className="home page">
+//          {usersData.map((item) => {
+//             return <PostFeed key={item.id} postData={item} />;
+//          })}
+//       </div>
+//    );
+// }
