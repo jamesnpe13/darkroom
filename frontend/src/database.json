@@ -4,7 +4,7 @@
       "username": "James Elazegui",
       "title": "Urban Lifestyle",
       "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus perspiciatis nisi qui maxime quaerat quisquam necessitatibus excepturi, vitae deleniti a corporis suscipit nobis, est ad velit ipsa ratione. Repellat, dolorem.",
-      "date": "26/09/2022",
+      "date": "26,Sep 2022",
       "likes": 20,
       "img_url": "https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aW1hZ2V8ZW58MHx8MHx8&w=1000&q=80"
    },
@@ -13,7 +13,7 @@
       "username": "Ellie Saxby",
       "title": "Sunday Morning Trek",
       "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus perspiciatis nisi qui maxime quaerat quisquam necessitatibus excepturi, vitae deleniti a corporis suscipit nobis, est ad velit ipsa ratione. Repellat, dolorem.",
-      "date": "26/09/2022",
+      "date": "26,Sep 2022",
       "likes": 42,
       "img_url": "https://cdn.auckland.ac.nz/aem/content/auckland/en/news/2022/06/08/how-nz-can-live-up-to-clean-green-image/_jcr_content/leftpar/imagecomponent/image.img.480.low.jpg/1654727864784.jpg"
    },
@@ -22,7 +22,7 @@
       "username": "Zoe Lee",
       "title": "The Wilderness Explorer",
       "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus perspiciatis nisi qui maxime quaerat quisquam necessitatibus excepturi, vitae deleniti a corporis suscipit nobis, est ad velit ipsa ratione. Repellat, dolorem.",
-      "date": "26/09/2022",
+      "date": "26,Sep 2022",
       "likes": 54,
       "img_url": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80"
    }

@@ -1,1 +1,1 @@
-.text{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)}/*# sourceMappingURL=PostImg.css.map */
+.post-img main{display:flex;flex-direction:column;gap:10px}.post-img main h3{color:gray}.fullimage{width:100%}/*# sourceMappingURL=PostImg.css.map */

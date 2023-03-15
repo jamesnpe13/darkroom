@@ -20,7 +20,7 @@ export default function PostFeed({ postData }) {
 
          <footer>
             <span>{postData.date}</span>
-            <span>{postData.likes}</span>
+            <span>Likes {postData.likes}</span>
          </footer>
       </div>
    );
