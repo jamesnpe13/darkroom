@@ -10,7 +10,6 @@ import Gallery from "./pages/Gallery";
 import CreatePost from "./pages/CreatePost";
 import { useEffect, useState } from "react";
 import PostImg from "./components/Post/PostImg";
-import Editpost from "./pages/Editpost";
 
 function App() {
    const [postsData, setPostsData] = useState([]);
@@ -34,7 +33,7 @@ function App() {
          });
    }
 
-   retur(
+   return (
       <div className="App">
          <BrowserRouter>
             <Headerbar />
@@ -42,7 +41,6 @@ function App() {
                <Route path="/" element={<Home postsData={postsData} />} />
                <Route path="/gallery" element={<Gallery />} />
                <Route path="/createpost" element={<CreatePost />} />
-               <Route path="/editpost/:postid" element={<Editpost />} />
                <Route path="*" element={<Notfound />} />
             </Routes>
             <NavBar />
