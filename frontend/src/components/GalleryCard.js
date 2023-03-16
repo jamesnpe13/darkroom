@@ -3,7 +3,6 @@ import "./GalleryCard.scss";
 const GalleryCard = () => {
     return (
         <div className="gallery page">
-            <h1 className="day">Today</h1>
             <div className="gallery-card">
                 <div>
                     <p className="card-title">Post Title </p>{" "}
@@ -19,7 +18,6 @@ const GalleryCard = () => {
                     {/* api image goes here */}
                 </div>
             </div>
-            <h1 className="day">Yesterday</h1>
         </div>
     );
 };

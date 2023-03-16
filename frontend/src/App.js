@@ -13,6 +13,7 @@ import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import CreatePost from "./pages/CreatePost";
 import EditPost from "./pages/EditPost";
+import Search from "./pages/Search";
 
 import PostImg from "./components/Post/PostImg";
 
@@ -47,6 +48,7 @@ function App() {
                <Route path="/gallery" element={<Gallery />} />
                <Route path="/createpost" element={<CreatePost />} />
                <Route path="/gallery/editpost" element={<EditPost />} />
+               <Route path="/search" element={<Search />} />
 
                <Route path="*" element={<Notfound />} />
             </Routes>
