@@ -1,6 +1,7 @@
 import "./Headerbar.scss";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import logonav from "../images/logo-nav.png";
 
 const Headerbar = () => {
     const path = useLocation().pathname;
@@ -27,7 +28,7 @@ const Headerbar = () => {
 
     return (
         <div className="headerbar">
-            <img src={"images/logo-nav.png"} alt=""></img>
+            <img src={logonav} alt=""></img>
             <p>{currentPage}</p>
         </div>
     );
