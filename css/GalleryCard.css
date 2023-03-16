@@ -1,7 +1,9 @@
 .gallery-card img {
   height: 60px;
-  outline: 1px solid grey;
+  width: 80px;
   border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .gallery-card {
@@ -20,8 +22,13 @@
 
 .card-description {
   opacity: 0.5;
+  padding-right: 5px;
 }
 
 .day {
   color: gray;
+}
+
+.card-writing {
+  width: 80%;
 }/*# sourceMappingURL=GalleryCard.css.map */
