@@ -1,0 +1,27 @@
+.search-post {
+  margin-top: 70px;
+}
+
+.searchbar {
+  margin: 20px;
+  width: 350px;
+  height: 30px;
+  padding: 10px;
+  background-position: left center;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.216);
+}
+
+input:focus {
+  border: none;
+}
+
+.search-history {
+  margin: 0px 20px 0px 20px;
+  color: gray;
+}
+
+.search-hist-cont {
+  justify-content: center;
+}/*# sourceMappingURL=Search.css.map */
