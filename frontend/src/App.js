@@ -1,14 +1,19 @@
+//libraries
 import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
 
+// components
 import NavBar from "./components/NavBar";
 import Headerbar from "./components/Headerbar";
 
+// pages
 import Notfound from "./pages/Notfound";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import CreatePost from "./pages/CreatePost";
-import { useEffect, useState } from "react";
+import EditPost from "./pages/EditPost";
+
 import PostImg from "./components/Post/PostImg";
 
 function App() {
@@ -41,6 +46,8 @@ function App() {
                <Route path="/" element={<Home postsData={postsData} />} />
                <Route path="/gallery" element={<Gallery />} />
                <Route path="/createpost" element={<CreatePost />} />
+               <Route path="/gallery/editpost" element={<EditPost />} />
+
                <Route path="*" element={<Notfound />} />
             </Routes>
             <NavBar />
