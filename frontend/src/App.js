@@ -8,45 +8,47 @@ import Notfound from "./pages/Notfound";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import CreatePost from "./pages/CreatePost";
+import Search from "./pages/Search";
 import { useEffect, useState } from "react";
 
 function App() {
-   const [postsData, setPostsData] = useState([]);
+    const [postsData, setPostsData] = useState([]);
 
-   useEffect(() => {
-      fetchAllPosts();
-   }, []);
+    useEffect(() => {
+        fetchAllPosts();
+    }, []);
 
-   useEffect(() => {
-   }, [postsData]);
+    useEffect(() => {}, [postsData]);
 
-   function fetchAllPosts() {
-      fetch("/posts", {
-         headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-         },
-      })
-         .then((response) => response.json())
-         .then((apiData) => {
-            setPostsData(apiData);
-         });
-   }
+    function fetchAllPosts() {
+        fetch("/posts", {
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+        })
+            .then((response) => response.json())
+            .then((apiData) => {
+                setPostsData(apiData);
+            });
+    }
 
-   return (
-      <div className="App">
-         <BrowserRouter>
-            <Headerbar />
-            <Routes>
-               <Route path="/" element={<Home postsData={postsData} />} />
-               <Route path="/gallery" element={<Gallery />} />
-               <Route path="/createpost" element={<CreatePost />} />
-               <Route path="*" element={<Notfound />} />
-            </Routes>
-            <NavBar />
-         </BrowserRouter>
-      </div>
-   );
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Headerbar />
+                <Routes>
+                    <Route path="/" element={<Home postsData={postsData} />} />
+                    <Route path="/gallery" element={<Gallery />} />
+                    <Route path="/createpost" element={<CreatePost />} />
+                    <Route path="/search" element={<Search />} />
+
+                    <Route path="*" element={<Notfound />} />
+                </Routes>
+                <NavBar />
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
