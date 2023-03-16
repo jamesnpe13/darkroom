@@ -1,7 +1,9 @@
 .gallery-card img {
     height: 60px;
-    outline: 1px solid grey;
+    width: 80px;
+    // outline: 1px solid grey;
     border-radius: 5px;
+    object-fit: cover;
 }
 .gallery-card {
     display: flex;
@@ -18,6 +20,7 @@
 }
 .card-description {
     opacity: 0.5;
+    padding-right: 5px;
 }
 .day {
     color: gray;
