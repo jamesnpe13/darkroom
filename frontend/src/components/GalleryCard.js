@@ -5,10 +5,10 @@ const GalleryCard = ({ postData }) => {
       return (
          <div className="gallery-card">
             <div className="card-writing">
-               <p className="card-title">{postData.title}</p>
+               <h3 className="card-title">{postData.title}</h3>
                <p className="card-description">{postData.caption}</p>
             </div>
-            <img src={postData.img_url} alt=""></img>{" "}
+            <img src={postData.img_url} alt=""></img>
          </div>
       );
    }
