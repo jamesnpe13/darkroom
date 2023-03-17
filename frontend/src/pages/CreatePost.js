@@ -1,4 +1,5 @@
 import "./CreatePost.scss";
+import UploadIcon from "../images/upload.png";
 
 export default function CreatPost() {
    function randomImg() {
@@ -22,5 +23,16 @@ export default function CreatPost() {
       return Img;
    }
 
-   return;
+   return (
+      <div className="create-post page">
+         <div className="image-upload">
+            <img src={UploadIcon} alt="" />
+            <p>Upload image</p>
+         </div>
+
+         <input className="post-title" type="text" name="" placeholder="Post Title" />
+         <textarea className="post-caption" rows="10" name="" placeholder="Caption" />
+         <button className="submit-post primary">Publish post</button>
+      </div>
+   );
 }

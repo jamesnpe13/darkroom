@@ -1,0 +1,60 @@
+@import "../App.scss";
+
+.create-post {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+
+   & > * {
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.247);
+   }
+
+   .image-upload {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      outline: 1px solid white;
+      background-color: rgba(255, 255, 255, 0.692);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      color: grey;
+
+   }
+
+   input[type="text"],
+   textarea {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-family: inherit;
+      resize: none;
+   }
+
+   button {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+
+      &:hover {
+         scale: 1.05;
+      }
+
+      &.primary {
+         background-color: $primary-color;
+         color: white;
+      }
+
+      &.secondary {
+         background-color: $secondary-color;
+         color: white;
+      }
+   }
+}
