@@ -6,6 +6,6 @@ cd backend
 npx nodemon
 
 cd frontend
-nom start
+npm start
 
 
