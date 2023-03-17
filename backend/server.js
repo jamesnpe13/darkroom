@@ -12,39 +12,49 @@ app.use(express.json());
 // models
 const Post = require("./models/post");
 
-const newPost = new Post({
-   title: "The Forest",
-   caption: "asdasdqsdasd",
-   date: new Date(),
-   likes: 5,
-});
-
 // routes
-
+// ================== GET REQUESTS ======================
 // get all posts
-app.get("/posts", async (req, res) => {
+app.get("/posts/allposts", async (req, res) => {
    const postArray = await Post.find({});
    res.json(postArray);
 });
 
-// get user's posts
-app.get("/posts/:user", (req, res) => {
-   //
+// get a post from all posts
+app.get("/posts/allposts/:id", async (req, res) => {
+   const postArray = await Post.findById({ _id: req.params.id });
+   res.json(postArray);
 });
+
+// get all posts from a user
+app.get("/posts/:user/allposts", async (req, res) => {
+   const postArray = await Post.find({ user: req.params.user });
+   res.json(postArray);
+});
+
+// get a post from a user
+app.get("/posts/:user/:id", async (req, res) => {
+   const postArray = await Post.find({ user: req.params.user, _id: req.params.id });
+   res.json(postArray);
+});
+
+// ================== POST REQUESTS ======================
 
 // create a new post
-app.post("/posts", (req, res) => {
-   //
-});
+app.post("/posts/newpost", async (req, res) => {
+   console.log("attempting to send data to DB");
+   const newPost = new Post({
+      username: req.body.username,
+      user: req.body.user,
+      title: req.body.title,
+      caption: req.body.caption,
+      likes: Math.trunc(Math.random(100)),
+      date: new Date(),
+      img_url: req.body.img_url,
+   });
 
-// update an existing post
-app.put("/posts/:id", (req, res) => {
-   //
-});
-
-// delete a post
-app.delete("/posts/:id", (req, res) => {
-   //
+   await newPost.save();
+   res.json(req.body);
 });
 
 // app.post("/posts", async (req, res) => {

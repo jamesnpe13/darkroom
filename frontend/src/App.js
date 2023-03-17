@@ -27,7 +27,7 @@ function App() {
    useEffect(() => {}, [postsData]);
 
    function fetchAllPosts() {
-      fetch("http://localhost:5000/posts", {
+      fetch("http://localhost:5000/posts/allposts", {
          headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
@@ -35,7 +35,8 @@ function App() {
       })
          .then((response) => response.json())
          .then((apiData) => {
-            setPostsData(apiData);
+            const apiDataReverse = [...apiData.reverse()];
+            setPostsData(apiDataReverse);
          });
    }
 
