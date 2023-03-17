@@ -10,7 +10,7 @@ const GalleryCard = ({ postData }) => {
                         <p className="card-description">{postData.caption}</p>
                     </div>
                     <div>
-                        <img src={postData.img_url} alt=""></img>{" "}
+                        <img src={postData.img_url} alt="" ></img>{" "}
                     </div>
                 </div>
             );
