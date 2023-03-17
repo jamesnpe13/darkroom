@@ -10,13 +10,13 @@ const Headerbar = () => {
     useEffect(() => {
         console.log(path);
         if (path === "/") {
-            setCurrentPage("Home");
+            setCurrentPage("Feed");
         }
         if (path === "/gallery") {
-            setCurrentPage("Gallery");
+            setCurrentPage("My Posts");
         }
         if (path === "/createpost") {
-            setCurrentPage("Create");
+            setCurrentPage("Create Post");
         }
         if (path === "/search") {
             setCurrentPage("Search");
