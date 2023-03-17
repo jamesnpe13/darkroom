@@ -4,14 +4,17 @@ import PostFeed from "../components/Post/PostFeed";
 import "./Home.scss";
 
 export default function Home({ postsData }) {
-
-   return (
-      <div className="home page">
-         {postsData.map((item) => {
-            return <PostFeed key={item._id} postData={item} />;
-         })}
-      </div>
-   );
+    {
+        if (postsData.length > 0) {
+            return (
+                <div className="home page">
+                    {postsData.map((item) => {
+                        return <PostFeed key={item._id} postData={item} />;
+                    })}
+                </div>
+            );
+        }
+    }
 }
 
 // export default function Home({ postsData }) {

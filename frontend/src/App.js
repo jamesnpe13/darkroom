@@ -45,11 +45,9 @@ function App() {
             <Headerbar />
             <Routes>
                <Route path="/" element={<Home postsData={postsData} />} />
-               <Route path="/gallery" element={<Gallery />} />
+               <Route path="/gallery" element={<Gallery postsData={postsData} />} />
                <Route path="/createpost" element={<CreatePost />} />
-               <Route path="/gallery/editpost" element={<EditPost />} />
                <Route path="/search" element={<Search />} />
-
                <Route path="*" element={<Notfound />} />
             </Routes>
             <NavBar />
