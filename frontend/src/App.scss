@@ -1,5 +1,6 @@
 $primary-color: rgb(67, 199, 122);
 $secondary-color: rgb(111, 212, 90);
+$destructive-color: rgb(255, 84, 78);
 
 * {
    padding: 0;
@@ -28,6 +29,11 @@ body {
    height: min(844px, 100vh);
    background-color: rgb(229, 229, 229);
    overflow: hidden;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
 }
 
 .page {

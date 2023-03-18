@@ -57,6 +57,40 @@ app.post("/posts/newpost", async (req, res) => {
    res.json(req.body);
 });
 
+// ================== PUT REQUESTS ======================
+
+// edit an existing post
+app.put("/posts/editpost", async (req, res) => {
+   console.log("attempting to update data in DB");
+   const newPost = new Post({
+      username: req.body.username,
+      user: req.body.user,
+      title: req.body.title,
+      caption: req.body.caption,
+      likes: req.body.likes,
+      date: req.body.date,
+      img_url: req.body.img_url,
+   });
+
+   const doc = Post.findById(req.body._id);
+   const output = (await doc).overwrite(newPost);
+   output.save();
+   console.log(output);
+
+   res.json(req.body);
+});
+
+// ================== DELETE REQUESTS ======================
+
+// edit an existing post
+app.delete("/posts/deletepost/:id", async (req, res) => {
+   console.log("attempting to delete data in DB");
+
+   await Post.findByIdAndDelete(req.params.id).then(() => {
+      console.log("post deleted");
+   });
+});
+
 // app.post("/posts", async (req, res) => {
 //    await newPost.save();
 //    const postArray = await Post.find({});
