@@ -85,7 +85,16 @@ export default function EditPost({ postsData, fetchAllPosts }) {
                <button className="primary" type="submit" onClick={sendForm}>
                   Save changes
                </button>
-               <button className="destructive" type="button" onClick={deletePost}>
+               <button
+                  className="destructive"
+                  type="button"
+                  onClick={() => {
+                     deletePost();
+                     navigate("/");
+                     setTimeout(() => {
+                        fetchAllPosts();
+                     }, 1000);
+                  }}>
                   Delete
                </button>
             </form>
