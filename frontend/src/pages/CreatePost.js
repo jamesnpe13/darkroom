@@ -5,6 +5,7 @@ import axios from "axios";
 
 export default function CreatPost() {
    const [newPostData, setNewPostData] = useState({});
+   const [postImage, setPostImage] = useState("");
    function randomImg() {
       const imgurlarray = [];
       imgurlarray[0] = "https://storage.googleapis.com/formative2/formative%202%20images/image-1.jpg";
@@ -25,9 +26,14 @@ export default function CreatPost() {
 
       return Img;
    }
+
    useEffect(() => {
       setNewPostData((values) => ({ ...values, img_url: randomImg() }));
    }, []);
+
+   useEffect(() => {
+      setPostImage(newPostData.img_url);
+   }, [newPostData]);
 
    function handleTitleChange(e) {
       const title = e.target.name;
@@ -49,6 +55,9 @@ export default function CreatPost() {
       const value = e.target.value;
       setNewPostData((values) => ({ ...values, [user]: value }));
    }
+   function handleSubmit(e) {
+      e.preventDefault();
+   }
 
    function sendForm() {
       console.log("SENDING FORM");
@@ -67,17 +76,22 @@ export default function CreatPost() {
 
    return (
       <div className="create-post page">
-         <form>
-            <div className="image-upload">
+         <form onSubmit={handleSubmit}>
+            {/* <div
+               className="image-upload"
+               onClick={(e) => {
+                  handleimageSelect(e);
+               }}>
                <img src={UploadIcon} alt="" />
                <p>Upload image</p>
-            </div>
+            </div> */}
+            <img className="image-upload" src={postImage} alt="" />
             <input type="text" name="title" placeholder="Post title" onChange={handleTitleChange} />
             <textarea rows="10" type="text" name="caption" placeholder="Post caption" onChange={handleCaptionChange} />
             <input type="text" name="username" placeholder="Author" onChange={handleUsernameChange} />
             <input type="text" name="users" placeholder="User ID (No spaces and special characters)" onChange={handleUserChange} />
 
-            <button className="primary" type="button" onClick={sendForm}>
+            <button className="primary" type="submit" onClick={sendForm}>
                Create post
             </button>
          </form>

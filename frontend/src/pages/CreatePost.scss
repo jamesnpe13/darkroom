@@ -13,6 +13,7 @@
       width: 100%;
       aspect-ratio: 3 / 2;
       outline: 1px solid white;
+      object-fit: cover;
       background-color: rgba(255, 255, 255, 0.692);
       border-radius: 8px;
       display: flex;
@@ -21,7 +22,6 @@
       flex-direction: column;
       gap: 20px;
       color: grey;
-
    }
 
    input[type="text"],
@@ -32,6 +32,7 @@
       padding: 10px 20px;
       font-family: inherit;
       resize: none;
+      font-size: 1.2em;
    }
 
    button {

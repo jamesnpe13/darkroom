@@ -1,21 +1,14 @@
-//libraries
+// libraries
 import "./App.scss";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 // components
 import NavBar from "./components/NavBar";
 import Headerbar from "./components/Headerbar";
 
-// pages
-import Notfound from "./pages/Notfound";
-import Home from "./pages/Home";
-import Gallery from "./pages/Gallery";
-import CreatePost from "./pages/CreatePost";
-import EditPost from "./pages/EditPost";
-import Search from "./pages/Search";
-
-import PostImg from "./components/Post/PostImg";
+// page router
+import PageRouter from "./Router";
 
 function App() {
    const [postsData, setPostsData] = useState([]);
@@ -44,13 +37,7 @@ function App() {
       <div className="App">
          <BrowserRouter>
             <Headerbar />
-            <Routes>
-               <Route path="/" element={<Home postsData={postsData} />} />
-               <Route path="/gallery" element={<Gallery postsData={postsData} />} />
-               <Route path="/createpost" element={<CreatePost />} />
-               <Route path="/search" element={<Search />} />
-               <Route path="*" element={<Notfound />} />
-            </Routes>
+            <PageRouter postsData={postsData} />
             <NavBar />
          </BrowserRouter>
       </div>

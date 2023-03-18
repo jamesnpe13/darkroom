@@ -57,6 +57,31 @@ app.post("/posts/newpost", async (req, res) => {
    res.json(req.body);
 });
 
+// ================== PUT REQUESTS ======================
+
+// edit an existing post
+app.put("/posts/editpost", async (req, res) => {
+   console.log("attempting to update data in DB");
+   const newPost = new Post({
+      username: req.body.username,
+      user: req.body.user,
+      title: req.body.title,
+      caption: req.body.caption,
+      likes: req.body.likes,
+      date: req.body.date,
+      img_url: req.body.img_url,
+   });
+   console.log(req.body._id);
+   Post.findByIdAndUpdate(req.body._id, newPost);
+
+   console.log(req.body);
+
+   res.json(req.body);
+
+   // await newPost.save();
+   // res.json(req.body);
+});
+
 // app.post("/posts", async (req, res) => {
 //    await newPost.save();
 //    const postArray = await Post.find({});
