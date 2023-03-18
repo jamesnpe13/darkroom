@@ -71,15 +71,24 @@ app.put("/posts/editpost", async (req, res) => {
       date: req.body.date,
       img_url: req.body.img_url,
    });
-   console.log(req.body._id);
-   Post.findByIdAndUpdate(req.body._id, newPost);
 
-   console.log(req.body);
+   const doc = Post.findById(req.body._id);
+   const output = (await doc).overwrite(newPost);
+   output.save();
+   console.log(output);
 
    res.json(req.body);
+});
 
-   // await newPost.save();
-   // res.json(req.body);
+// ================== DELETE REQUESTS ======================
+
+// edit an existing post
+app.delete("/posts/deletepost/:id", async (req, res) => {
+   console.log("attempting to delete data in DB");
+
+   await Post.findByIdAndDelete(req.params.id).then(() => {
+      console.log("post deleted");
+   });
 });
 
 // app.post("/posts", async (req, res) => {

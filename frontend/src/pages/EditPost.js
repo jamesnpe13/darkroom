@@ -1,10 +1,11 @@
 import "./EditPost.scss";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function EditPost({ postsData }) {
+export default function EditPost({ postsData, fetchAllPosts }) {
    const params = useParams().id;
+   const navigate = useNavigate();
    const [targetPost, setTargetPost] = useState(undefined);
    const [newPostData, setNewPostData] = useState([]);
 
@@ -51,16 +52,24 @@ export default function EditPost({ postsData }) {
          .put("http://localhost:5000/posts/editpost", newPostData)
          .then((response) => {
             console.log(response);
+            navigate("/");
+            fetchAllPosts();
          })
          .catch((error) => {
             console.log(error);
          });
-
       console.log(newPostData);
    }
 
    function deletePost() {
-      //
+      axios
+         .delete(`http://localhost:5000/posts/deletepost/${params}`)
+         .then((response) => {
+            console.log(response);
+         })
+         .catch((error) => {
+            console.log(error);
+         });
    }
 
    if (targetPost !== undefined) {

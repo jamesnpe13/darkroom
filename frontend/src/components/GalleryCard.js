@@ -8,7 +8,7 @@ const GalleryCard = ({ postData }) => {
             <div className="gallery-card">
                <div className="card-writing">
                   <h3 className="card-title">{postData.title}</h3>
-                  <p className="card-description">{postData.caption}</p>
+                  {/* <p className="card-description">{postData.caption}</p> */}
                </div>
                <img src={postData.img_url} alt=""></img>
             </div>

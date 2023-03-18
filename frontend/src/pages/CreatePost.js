@@ -1,11 +1,14 @@
 import "./CreatePost.scss";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import UploadIcon from "../images/upload.png";
 import axios from "axios";
 
-export default function CreatPost() {
+export default function CreatPost({ fetchAllPosts }) {
    const [newPostData, setNewPostData] = useState({});
    const [postImage, setPostImage] = useState("");
+   const navigate = useNavigate();
+
    function randomImg() {
       const imgurlarray = [];
       imgurlarray[0] = "https://storage.googleapis.com/formative2/formative%202%20images/image-1.jpg";
@@ -66,6 +69,8 @@ export default function CreatPost() {
          .post("http://localhost:5000/posts/newpost", newPostData)
          .then((response) => {
             console.log(response);
+            navigate("/");
+            fetchAllPosts();
          })
          .catch((error) => {
             console.log(error);

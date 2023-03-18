@@ -37,7 +37,7 @@ function App() {
       <div className="App">
          <BrowserRouter>
             <Headerbar />
-            <PageRouter postsData={postsData} />
+            <PageRouter postsData={postsData} fetchAllPosts={fetchAllPosts} />
             <NavBar />
          </BrowserRouter>
       </div>
