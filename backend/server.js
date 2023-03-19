@@ -35,8 +35,14 @@ app.post("/users", async (req, res) => {
       password: req.body.password,
    });
 
-   await newUser.save();
-   res.json(req.body);
+   await newUser
+      .save()
+      .then((response) => {
+         res.send(response.username);
+      })
+      .catch((error) => {
+         res.send(error);
+      });
 });
 // ================== GET REQUESTS ======================
 // get all posts
