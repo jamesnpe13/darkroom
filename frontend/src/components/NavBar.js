@@ -11,7 +11,7 @@ const NavBar = ({ fetchAllPosts }) => {
       <nav>
          <div className="bottom-nav">
             <NavLink
-               to="/"
+               to="/home"
                onClick={() => {
                   fetchAllPosts();
                   console.log("reload data");
