@@ -1,5 +1,6 @@
 import "./GalleryCard.scss";
 import { Link } from "react-router-dom";
+import placeholderImg from "../images/placeholder.png";
 
 const GalleryCard = ({ postData }) => {
    if (postData !== undefined) {
@@ -10,7 +11,7 @@ const GalleryCard = ({ postData }) => {
                   <h3 className="card-title">{postData.title}</h3>
                   {/* <p className="card-description">{postData.caption}</p> */}
                </div>
-               <img src={postData.img_url} alt=""></img>
+               <img src={postData.img_url || placeholderImg} alt=""></img>
             </div>
          </Link>
       );

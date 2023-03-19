@@ -21,23 +21,59 @@ app.get("/users", async (req, res) => {
    res.json(usersArray);
 });
 
-// get a user
-app.get("/users/:username", async (req, res) => {
-   const usersArray = await User.find({ username: req.params.username });
-   res.json(usersArray);
+// get a useer with matching password
+app.get("/login/:username", async (req, res) => {
+   const targetUser = await User.find({
+      username: req.params.username,
+   });
+
+   res.json(targetUser);
 });
 
-// create a new user
-app.post("/users", async (req, res) => {
-   console.log("Creating new user");
+// get a useer with matching password
+app.get("/login", async (req, res) => {
+   const targetUser = await User.find({
+      username: req.body.username,
+      password: req.params.pass,
+   });
+
+   if (targetUser != []) {
+      res.send("MATCH");
+   } else if (targetUser == []) {
+      res.send("NO MATCH");
+   }
+
+   // res.json(usersArray);
+});
+
+// create a new user or get user
+app.post("/login", async (req, res) => {
+   console.log("Creating new user or loging in user");
+
+   const targetUser = await User.find({ username: req.body.username });
+
    const newUser = new User({
       username: req.body.username,
       password: req.body.password,
    });
 
-   await newUser.save();
-   res.json(req.body);
+   await newUser
+      .save()
+      .then((response) => {
+         res.send(response.username);
+         res.json({
+            usernameOk: true,
+            username: response.username,
+         });
+      })
+      .catch(() => {
+         res.json({
+            usernameOk: false,
+            message: "Username already exists.",
+         });
+      });
 });
+
 // ================== GET REQUESTS ======================
 // get all posts
 app.get("/posts/allposts", async (req, res) => {

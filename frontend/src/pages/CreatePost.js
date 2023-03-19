@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import UploadIcon from "../images/upload.png";
 import axios from "axios";
+import placeholderImg from "../images/placeholder.png";
 
 export default function CreatPost({ fetchAllPosts }) {
    const [newPostData, setNewPostData] = useState({});
@@ -25,8 +26,6 @@ export default function CreatPost({ fetchAllPosts }) {
       imgurlarray[11] = "https://storage.googleapis.com/formative2/resized/image-12.jpg";
       imgurlarray[12] = "https://storage.googleapis.com/formative2/resized/image-13.jpg";
       imgurlarray[13] = "https://storage.googleapis.com/formative2/resized/image-14.jpg";
-
-      
 
       let Img = imgurlarray[Math.floor(Math.random() * imgurlarray.length)];
 
@@ -72,7 +71,7 @@ export default function CreatPost({ fetchAllPosts }) {
          .post("http://localhost:5000/posts/newpost", newPostData)
          .then((response) => {
             console.log(response);
-            navigate("/");
+            navigate("/home");
             fetchAllPosts();
          })
          .catch((error) => {
@@ -93,7 +92,7 @@ export default function CreatPost({ fetchAllPosts }) {
                <img src={UploadIcon} alt="" />
                <p>Upload image</p>
             </div> */}
-            <img className="image-upload" src={postImage} alt="" />
+            <img className="image-upload" src={postImage || placeholderImg} alt="" />
             <input type="text" name="title" placeholder="Post title" onChange={handleTitleChange} />
             <textarea rows="10" type="text" name="caption" placeholder="Post caption" onChange={handleCaptionChange} />
             <input type="text" name="username" placeholder="Author" onChange={handleUsernameChange} />

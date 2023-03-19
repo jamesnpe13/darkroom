@@ -1,6 +1,7 @@
 import PostImg from "./PostImg";
 import "./PostFeed.scss";
 import { Link, NavLink, useParams } from "react-router-dom";
+import placeholderImg from "../../images/placeholder.png";
 
 export default function PostFeed({ postData }) {
    function ClickHandler() {
@@ -9,7 +10,7 @@ export default function PostFeed({ postData }) {
    return (
       <div className="post-feed">
          {/* <Link to={`/gallery/${postData._id}`}> */}
-            <img src={postData.img_url} alt="" />
+            <img src={postData.img_url || placeholderImg} alt="" />
          {/* </Link> */}
          <main>
             <h2>{postData.title}</h2>
