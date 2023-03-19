@@ -2,6 +2,7 @@ import "./SplashAnimation.scss";
 import Logo from "../images/logo-nav.png";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import backgroundImg from "../images/background.png";
 
 export default function SplashAnimation() {
    const navigate = useNavigate();
@@ -16,7 +17,8 @@ export default function SplashAnimation() {
 
    return (
       <div className="splash-animation">
-         <img src={Logo} style={{ display: `${logoIsVisible ? "block" : "none"}` }} onAnimationEnd={handleLoogoAnimEnd} />
+         <img className="background-image" src={backgroundImg} alt="" />
+         <img src={Logo} className="logo" style={{ display: `${logoIsVisible ? "block" : "none"}` }} onAnimationEnd={handleLoogoAnimEnd} />
 
          <form style={{ display: `${formIsVisible ? "flex" : "none"}` }}>
             <h2>Log in to your account</h2>

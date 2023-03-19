@@ -21,7 +21,15 @@
       margin-top: 20px;
    }
 
-   img {
+   .background-image {
+      z-index: -100;
+      filter: contrast(0.98);
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+   }
+
+   .logo {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -107,7 +115,6 @@
       }
    }
    @keyframes fadeIn {
-      
       0% {
          translate: 0 20px;
          opacity: 0;
