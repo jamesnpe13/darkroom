@@ -1,11 +1,16 @@
 # darkroom
 
-npm install
 
-cd backend
-npx nodemon
 
-cd frontend
-npm start
+
+##Backend
+cd backend. 
+npm install. 
+npx nodemon. 
+
+##Frontend
+cd frontend. 
+npm install. 
+npm start. 
 
 
