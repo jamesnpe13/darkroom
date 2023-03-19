@@ -52,7 +52,7 @@ export default function EditPost({ postsData, fetchAllPosts }) {
          .put("http://localhost:5000/posts/editpost", newPostData)
          .then((response) => {
             console.log(response);
-            navigate("/");
+            navigate("/home");
             fetchAllPosts();
          })
          .catch((error) => {
