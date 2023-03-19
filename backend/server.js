@@ -11,8 +11,33 @@ app.use(express.json());
 
 // models
 const Post = require("./models/post");
+const User = require("./models/user");
 
 // routes
+// ================== USER REQUESTS ======================
+// get all users
+app.get("/users", async (req, res) => {
+   const usersArray = await User.find({});
+   res.json(usersArray);
+});
+
+// get a user
+app.get("/users/:username", async (req, res) => {
+   const usersArray = await User.find({ username: req.params.username });
+   res.json(usersArray);
+});
+
+// create a new user
+app.post("/users", async (req, res) => {
+   console.log("Creating new user");
+   const newUser = new User({
+      username: req.body.username,
+      password: req.body.password,
+   });
+
+   await newUser.save();
+   res.json(req.body);
+});
 // ================== GET REQUESTS ======================
 // get all posts
 app.get("/posts/allposts", async (req, res) => {
