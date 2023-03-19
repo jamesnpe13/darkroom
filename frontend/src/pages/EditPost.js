@@ -90,7 +90,7 @@ export default function EditPost({ postsData, fetchAllPosts }) {
                   type="button"
                   onClick={() => {
                      deletePost();
-                     navigate("/");
+                     navigate("/home");
                      setTimeout(() => {
                         fetchAllPosts();
                      }, 1000);
