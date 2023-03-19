@@ -29,7 +29,7 @@
       filter: brightness(4);
       animation: ease-out;
       animation-name: fadeInOut;
-      animation-duration: 5s;
+      animation-duration: 8s;
       animation-fill-mode: forwards;
    }
 
@@ -88,11 +88,11 @@
          translate: 0 20px;
          opacity: 0;
       }
-      10% {
+      20% {
          translate: 0 20px;
          opacity: 0;
       }
-      20% {
+      30% {
          translate: 0 0;
          opacity: 1;
       }
