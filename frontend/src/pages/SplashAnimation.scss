@@ -1,0 +1,40 @@
+.splash-animation {
+   width: 100%;
+   height: 100%;
+   z-index: 1000;
+   background-color: rgb(20, 20, 20);
+   position: absolute;
+   display: grid;
+   place-content: center;
+
+   img {
+      filter: brightness(4);
+      animation: ease-out;
+      animation-name: fadeInOut;
+      animation-duration: 6s;
+   }
+}
+
+@keyframes fadeInOut {
+   0% {
+      transform: translateY(20px);
+      opacity: 0;
+   }
+   10% {
+      transform: translateY(20px);
+      opacity: 0;
+   }
+   20% {
+      transform: translateY(0);
+      opacity: 1;
+   }
+   70% {
+      opacity: 1;
+   }
+   80% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 0;
+   }
+}
