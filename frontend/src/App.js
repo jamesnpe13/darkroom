@@ -20,6 +20,7 @@ function App() {
    useEffect(() => {}, [postsData]);
 
    function fetchAllPosts() {
+      // this is a test comment
       // this is another comment
       fetch("http://localhost:5000/posts/allposts", {
          headers: {
