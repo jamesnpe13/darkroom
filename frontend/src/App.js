@@ -27,6 +27,7 @@ function App() {
       // this is a test comment
 
       // this is a test comment from branch
+      // this is a test comment from main
       fetch("http://localhost:5000/posts/allposts", {
          headers: {
             "Content-Type": "application/json",
