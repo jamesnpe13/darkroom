@@ -20,6 +20,7 @@ function App() {
    useEffect(() => {}, [postsData]);
 
    function fetchAllPosts() {
+      // this is another comment
       fetch("http://localhost:5000/posts/allposts", {
          headers: {
             "Content-Type": "application/json",
