@@ -22,10 +22,11 @@ function App() {
    function fetchAllPosts() {
       // this is a test comment
       // this is another comment
-      
+
       // this is a test comment from main
       // this is a test comment
 
+      // this is a test comment from branch
       // this is a test comment from main
       fetch("http://localhost:5000/posts/allposts", {
          headers: {
